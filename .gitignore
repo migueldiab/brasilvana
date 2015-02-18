@@ -1,5 +1,4 @@
 wp-config.php
-~*
 *.sublime-project
 *.sublime-workspace
 *.log
@@ -14,13 +13,14 @@ wp-config.php
 *.tar
 *.zip
 sitemap.xml
-sitemap.xml.gz                                                                                                        
-wp-content/advanced-cache.php                                                                                         
-wp-content/backup-db/                                                                                                 
+sitemap.xml.gz
+wp-content/advanced-cache.php
+wp-content/backup-db/
 wp-content/backups/
 wp-content/blogs.dir/
 wp-content/cache/
-wp-content/upgrade/                                                                                                   
-wp-content/uploads/                                                                                                   
+wp-content/upgrade/
+wp-content/uploads/
 wp-content/wp-cache-config.php
-
+~*
+*~
