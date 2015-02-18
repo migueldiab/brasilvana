@@ -1,0 +1,1299 @@
+# Changelog
+
+### Version 3.1.2
+
+#### Bug fixes
+
+  * Cleaned up the `TarskiOptions` class `POST` handler to remove references to
+    unused properties and ensure all input is validated.
+
+#### Tweaks
+
+  * Removed direct access preventation code from `comments.php`.
+  * `get_template_directory` and `get_stylesheet_directory` function calls now
+    used in preference to `TEMPLATEPATH` and `STYLESHEETPATH` constants.
+  * Text domains are now present for all translated strings, even those already
+    used in the core WordPress code.
+
+
+### Version 3.1.1
+
+#### Bug fixes
+
+  * The `tarski_headerimage` function no longer outputs broken markup when there
+    is no header image set.
+
+
+### Version 3.1.0
+
+#### New features
+
+  * Sub-menu menu support in the navbar
+  * JavaScript-enhanced dropdowns to display sub-menus
+
+#### Tweaks
+
+  * Child theme stylesheets are now always loaded
+  * The output of `tarski_post_metadata_edit` now passes through
+    `edit_post_link` filters.
+  * Added default navbar for sites without menus defined
+  * New search form placeholder fallback JavaScript
+  * Tarski now depends on jQuery
+  * Use `is_multi_author` function in favour of the now-deprecated Tarski
+    function `tarski_should_show_authors`
+  * Deprecated `tarski_count_authors` and `tarski_resave_show_authors`
+    functions
+  * Deprecated `tarski_css` and `tarski_js` functions
+  * Removed all functions deprecated before version 3.0
+  * Deprecated `tarski_inject_scripts` function
+  * Removed defunct admin page JavaScript
+
+#### Bug fixes
+
+  * Make development JavaScript and CSS files load when `TARSKI_DEBUG` is set
+    to `true`
+
+
+### Version 3.0.5 [&sect;](http://tarskitheme.com/2011/03/18/3-0-release/)
+
+#### Bug fixes
+
+  * Fixed multisite name in footer credits.
+
+
+### Version 3.0.4 [&sect;](http://tarskitheme.com/2011/03/18/3-0-release/)
+
+#### Bug fixes
+
+  * Removed syntactic incompatibility with PHP 4
+
+
+### Version 3.0.3 [&sect;](http://tarskitheme.com/2011/03/18/3-0-release/)
+
+#### Bug fixes
+
+  * Removed duplicate comment id fields which were breaking threaded comments
+
+
+### Version 3.0.2 [&sect;](http://tarskitheme.com/2011/03/18/3-0-release/)
+
+#### Tweaks
+
+  * Slight improvements to the image overflow code
+
+
+### Version 3.0.1 [&sect;](http://tarskitheme.com/2011/03/18/3-0-release/)
+
+#### Tweaks
+
+  * Always display a link to a post's page, even if there is no title
+  * Stop images without set sizes from overflowing the content area
+
+
+### Version 3.0.0 [&sect;](http://tarskitheme.com/2011/03/18/3-0-release/)
+
+#### Features
+
+  * Replaced Tarski navbar with WordPress core menu functionality
+  * Replaced Tarski header images with WordPress core functionality
+  * Replaced Tarski asides functionality with aside post format
+  * Replaced comment form with WordPress `comment_form` function call
+  * Styled the visual editor text field to approximate live styling
+
+#### Tweaks
+
+  * Dropped current page link highlighting for browsers not supporting the
+    parent selector
+  * Removed update notifier
+  * Removed option not to paginate index pages
+  * Deprecated defunct Tarski navbar functions
+  * Removed all functions deprecated before version 2.7
+  * Deprecated `wrap_values_in_element` function
+  * Merged `app/launcher.php` file with `functions.php` file
+  * Deprecated `tarski_javascript` function in favour of core functions
+  * Renamed `README.md` to `readme.txt` to follow theme guidelines
+  * Replaced calls to `get_bloginfo` function with new core functions
+  * Namespaced form styling so as not to interfere with the admin bar
+  * Changed permission level necessary to edit Tarski options from
+    `edit_themes` to `manage_options`
+  * Made time format strings translateable
+  * Deprecated `tarski_searchform` function
+  * Replaced `detectWPMU` and `detectWPMUadmin` with core functions
+    `is_multisite` and `is_super_admin`
+  * Updated license information in stylesheet and moved license file to comply
+    with new WordPress theme policy
+  * Replaced `tarski_bodyclass` function with a WP API call
+  * Removed the `screen.css` stylesheet and moved its content into the main
+    stylesheet
+
+#### Bug fixes
+
+  * Replaced call to deprecated `_c` function with `_x`
+  * Fix some warnings on the options page when saving alternate styles and
+    headers
+
+
+### Version 2.7.1 [&sect;](http://tarskitheme.com/2010/08/01/2-7-0-release/)
+
+#### Bug fixes
+
+  * Posts only attempt to display categories when there are some
+  * Fixed some metadata display logic to match that of versions prior to 2.7.0
+  * Fixed navigation display logic to match that of versions prior to 2.7.0
+
+
+### Version 2.7.0 [&sect;](http://tarskitheme.com/2010/08/01/2-7-0-release/)
+
+#### New features
+
+  * Added support for custom backgrounds
+  * Child themes may override some Tarski templates by including files of the
+    same name in an `/app/templates` directory within the child theme
+  * Post metadata is now added via the `th_post_metadata` filter hook
+  * Use minified versions of Tarski's JavaScript and CSS files unless
+    `TARSKI_DEBUG` is set to `true`
+  * Theme graphics are more strongly compressed
+
+#### Tweaks
+
+  * Captions are now centred
+  * Add `aria-required` and `aria-multiline` attributes to comment form fields
+  * Use HTML5 `search` text field type in the search form
+  * Use HTML5 `email` and `url` text field types in the comment form
+  * `loop.php` file moved into `app/templates/` directory
+  * The `tarski_assets` filter is now deprecated
+  * The `TarskiAsset` class has been removed
+  * The array passed to the `tarski_asset_meta` filter now has meaningful keys
+  * Require the `WP_Http` class on the options page to power the update
+    notifier
+  * Remove deprecated `automatic_feed_links` call, use the new
+    `automatic-feed-links` option on `add_theme_support` instead
+  * Replace deprecated `wp_specialchars` call on the Tarski options page with
+    `esc_html`
+  * Use `the_title_attribute` function when printing a post title within an
+    element attribute
+
+#### Bug fixes
+
+  * Blank header now doesn't render
+  * Fix placeholder attribute detection in Internet Explorer
+
+
+### Version 2.6 [&sect;](http://tarskitheme.com/2010/01/16/2-6-release/)
+
+#### New features
+
+  * Header images are now also pulled from child themes
+  * Child themes can define their own alternate styles
+  * Styling for captioned images
+  * Support for post thumbnails
+  * `README` file introducing users and developers to working with Tarski
+  * Home and page links are now added to the navbar via the `tarski_navbar`
+    filter
+
+#### Tweaks
+
+  * External navbar links are now ordered by link rating
+  * Page and external navbar links now have more meaningful array keys when
+    passed to the `tarski_navbar` filter
+  * Sidebar and widget upgrade routine is deprecated
+  * Search form uses [HTML5][html5] placeholder text where available
+  * Switched to the new WordPress escaping
+    <abbr title="Application Programming Interface">API</abbr>
+  * Rewritten TarskiOptions object deserialisation
+  * Added `get_raw_tarski_option` function
+  * Alternate stylesheet listing degrades gracefully when no styles are present
+  * Header listing degrades gracefully when no headers are present
+  * Drop support for the user sidebar file
+  * Remove `constants.php` file support
+  * Change of `DOCTYPE` to [HTML 5][html5]
+  * `$content_width` variable is now explicitly declared at 500px
+
+#### Bug fixes
+
+  * Floated elements in the post content are now cleared
+  * Always link to the 'respond' anchor if comments are open but none have been
+    posted yet
+
+[html5]: http://www.w3.org/TR/html5/
+
+
+### Version 2.5 [&sect;](http://tarskitheme.com/2009/08/07/25-release/)
+
+#### New features
+
+  * Recent Articles widget can be used more than once
+  * The number of posts displayed by Recent Articles widget is adjustable
+  * The title of the Recent Articles widget is customisable
+  * Cache and version file locations can be overridden
+  * Custom header constants can now be overridden
+  * Nicer buttons for capable browsers
+
+#### Tweaks
+
+  * Deprecated `check_input` function
+  * Clean up some core library functions and documentation
+  * Refactored `tarski_navbar`
+  * Removed defunct debug template
+  * Recent Articles widget re-implemented using the new widget
+    <abbr title="Application Programming Interface">API</abbr>
+  * Remove search form from 404 error page
+  * Use main sidebar for search results
+  * Clearer comment reply icon for <abbr title="Right to Left">RTL</abbr>
+    languages
+  * Cleaner trackback <abbr title="Uniform Resource Identifier">URI</abbr>
+    display for <abbr title="Right to Left">RTL</abbr> languages
+  * Corrected widget list margins for <abbr title="Right to Left">RTL</abbr>
+    languages
+  * Decreased lists' left margins
+  * Deprecated `user-sidebar.php` custom sidebar file
+  * A default set of widgets is no longer installed
+  * Deprecated `tarski_prefill_sidebars` function
+  * Rename `Options` class to `TarskiOptions` to prevent namespace clashes
+  * Improve `code` and `pre` element styling
+  * Style all text input fields in the same fashion
+  * Removed duplicate password required message
+  * Style `tt` elements
+  * Changed navbar admin link text to 'Dashboard'
+  * Removed functions deprecated in version 2.2
+  * Deprecated `add_version_to_styles` function
+  * Deprecated `feed_link_type` and `generate_feed_link` functions
+  * Make on-page feed links use `get_feed_link`
+  * Feed links are now provided by the <abbr title="WordPress">WP</abbr> core
+    function `automatic_feed_links`
+  * Post classes are now applied to single posts and pages
+  * Refactored `tarski_recent_entries`
+  * Refactored `tarski_headerimage`
+  * Added empty array as default argument for `tarski_recent_entries`
+  * Theme tags updated to comply with new theme directory requirements
+
+#### Bug fixes
+
+  * Fix undefined variable error when navbar has no contents
+  * `wpautop` is no longer applied to text widgets
+  * Fix undefined variable error in `the_archive_author_description`
+  * Fix notices caused by undefined indices in the Options class
+  * Fix version check errors caused by lack of connection
+  * Check whether `WP_DEBUG` is defined before referring to it
+  * Fix notices generated by the `tidy_avatars` function
+  * Widgets now register properly if the `sidebars_widgets` field is deleted
+  * Deprecated functions on the archives template have been replaced
+  * Fixed uninitialised variable errors with nested comments
+  * Fixed a minor localisation issue with 404 error page titles
+  * Fixed uninitialised variable errors with recent articles widget
+  * Site descriptions are now properly filtered
+  * Replaced deprecated `get_settings` call
+  * Fixed uninitialised variable error with blank header
+  * Check whether post exists before trying to access its excerpt
+  * Corrected bottom margins for posts on index pages
+  * Abbreviated opening <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>
+    tag removed
+
+
+### Version 2.4 [&sect;](http://tarskitheme.com/2008/12/04/24-release/)
+
+#### New features
+
+  * Support for WordPress 2.7's threaded and paginated comments (various)
+  * <abbr title="Cross-Site Request Forgery">CSRF</abbr>-hardened login and
+    logout functions (r814)
+  * Version check now uses WordPress'
+    <abbr title="Hypertext Transport Protocol">HTTP</abbr>
+    <abbr title="Application Programming Interface">API</abbr> (r794)
+  * Added support for sticky posts (r793, r796)
+  * Version check now returns details of the latest release (r789)
+  * Options page now uses WordPress' generic `POST` handler (r778, r788)
+  * Added default widget sidebar content (r777)
+
+#### Tweaks
+
+  * Updated some inline function references (various)
+  * Updated some inline documentation with package info (various)
+  * Updated options page to match new admin style (various)
+  * Moved comments reply form into its own file (r813)
+  * Removed functions deprecated in version 2.1 (r810)
+  * Replaced
+    <abbr title="Checkbox and Radio button Input Replacement">CRIR</abbr> with
+    home-grown header selector (r801-7)
+  * Move version check copy into TarskiVersion class (r797)
+  * Deprecated `can_get_remote` function (r797)
+  * Presentation of version data on options page improved (r794)
+  * Deprecated `tarski_messages` and `tarski_admin_style` functions (r794)
+  * Renamed `Asset` class to `TarskiAsset` and `Version` to `TarskiVersion`
+    (r794)
+  * <abbr title="WordPress">WP</abbr> 2.7 compatibility update for options page
+    styles and scripts  (r792)
+  * Move template files to `app/templates` (r791)
+  * Options code now checks referrers as well as capabilities (r788)
+  * Improved ease of localisation for comments template (r787)
+  * Use <abbr title="Secure Sockets Layer">SSL</abbr>-aware `site_url` function
+    in comments template (r786)
+  * Improved ease of localisation for options page notices (r783, r799)
+  * Remove tab indices (r782)
+  * Show tags everywhere by default (r779)
+  * Deprecated `ready_to_delete_options` (r778)
+  * Moved version data cache into `WP_CONTENT_DIR` (r776)
+  * Improved ease of localisation for 'No posts found' text (r775)
+
+#### Bug fixes
+
+  * 'Description' `meta` element content is now better escaped (r865)
+  * Fixed untranslateable text on the options page (r799)
+
+
+### Version 2.3 [&sect;](http://tarskitheme.com/2008/08/10/23-release/)
+
+#### New features
+
+  * Options page now compatible with
+    <abbr title="Secure Sockets Layer">SSL</abbr> admin (r731)
+
+#### Tweaks
+
+  * Don't serialise the data passed to `update_option` (r763)
+  * Show version cache notice when _file_, not directory, isn't writable (r760)
+  * Clean up `cache_is_writable` function (r759, r761)
+  * Add `js.css` to the list of disallowed custom styles (r755)
+  * Hide the search form label faster (r754)
+  * `multiple_tag_titles` function refactored (r751)
+  * Upgrade functionality refactored (r746)
+  * Author count check only runs when posts are saved or deleted (r745, r748)
+  * Author count checks how many authors have published posts (r744)
+  * `wpdb->prepare()` method used for author count query (r742)
+  * Deprecated `version_to_integer` and `version_newer_than` functions (r739)
+  * Switched to native <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>
+    `version_compare` function (r737)
+  * Options page access granted only to users with `edit_themes` capability (r736)
+  * Stylesheets for the admin section enqueued, not printed (r734)
+
+#### Bug fixes
+
+  * Added more checks to upgrade functionality (r746)
+  * Made navbar selector work better in Internet Explorer (r735)
+  * Excluded navbar links category from the links page (r733)
+
+
+### Version 2.2.2 [&sect;](http://tarskitheme.com/2008/07/19/22-release/)
+
+#### Bug fixes
+
+  * Replace defunct function reference in Links template (r724)
+
+
+### Version 2.2.1 [&sect;](http://tarskitheme.com/2008/07/19/22-release/)
+
+#### Bug fixes
+
+  * Always show authors if Tarski options haven't been saved (r715)
+
+
+### Version 2.2 [&sect;](http://tarskitheme.com/2008/07/19/22-release/)
+
+#### New features
+
+  * Navbar selector: sub-page lists are collapsible (r606)
+  * Navbar selector: sub-pages are listed as such (r599)
+
+#### Tweaks
+
+  * Better handling of attachments (r697, r698)
+  * Tweaked gallery styling to better fit Tarski (r695)
+  * Add <abbr title="WordPress">WP</abbr> standard alignment classes (r694)
+  * Added inline hooks documentation (r657, r658, r661, r665, r666, r667)
+  * Deprecated `tarski_excerpt` function (r664)
+  * Deprecated `tarski_date` function in favour of a
+    <abbr title="WordPress">WP</abbr> core function (r662)
+  * Removed filter from `implode_proper` function (r660)
+  * Removed functions deprecated two major releases ago (r659)
+  * Removed defunct Tarski search widget (r656)
+  * Paginate index pages by default (r652)
+  * Remove pagination from index pages more elegantly and efficiently (r651)
+  * Replaced Tarski links widget with a filter (r642)
+
+
+### Version 2.1.4 [&sect;](http://tarskitheme.com/2008/07/13/214-release/)
+
+#### Bug fixes
+
+  * Correct overzealous calendar widget
+    <abbr title="Cascading Stylesheets">CSS</abbr> (r687)
+  * Sidebar upgrade routine only runs for older versions (r684)
+  * Smarter unserialisation for Tarski options (r645)
+  * Fix Archives template layout for Janus style (r644)
+
+
+### Version 2.1.3 [&sect;](http://tarskitheme.com/2008/05/20/21-release/)
+
+#### Bug fixes
+
+  * Revert to using `curl_setopt()` for
+    <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> 4 compatibility (r629)
+
+
+### Version 2.1.2 [&sect;](http://tarskitheme.com/2008/05/20/21-release/)
+
+#### Bug fixes
+
+  * Fix version check timeout issues (r620)
+  * Add missing textdomain to forum link (r614)
+
+
+### Version 2.1.1 [&sect;](http://tarskitheme.com/2008/05/20/21-release/)
+
+#### Bug fixes
+
+  * Fixed navbar character encoding problem (r595)
+  * Corrected Janus feed icon position (r592)
+
+
+### Version 2.1 [&sect;][36]
+
+  [36]: http://tarskitheme.com/2008/05/20/21-release/
+
+#### New features
+
+  * New icon designs (r567)
+  * New options page design (r508, r539, r540)
+  * Added avatar support (r500)
+  * Added action hook `th_posts_nav` (r493)
+  * Asset class now handles `wp_head` assets (r471)
+  * Type checking on filter returns disabled when `WP_DEBUG` is true (r470)
+  * All custom content areas are now widgets (various)
+  * Showing authors is now pluggable (r466)
+  * New links widget which overrides default one (r449)
+  * Main footer area is now a widget field (r439)
+  * Feed link for comments on search results (r427)
+  * Search query now displays in search page title (r425)
+  * 'Description' `meta` element now uses excerpts where available (r421)
+
+#### Tweaks
+
+  * Default avatar filter for `tarski_avatar` (r564)
+  * Added filter to `tarski_date` (r515)
+  * New style for tag cloud widget (r551)
+  * New style for links list widgets (r550)
+  * New style for calendar widget (r549)
+  * Slightly darkened text colours (r546)
+  * Now requires WordPress 2.5 (r545)
+  * Added <abbr title="XHTML Friends Network">XFN</abbr> profile attribute to
+    `head` (r525)
+  * Use native <abbr title="WordPress">WP</abbr> `language_attributes` function
+    (r518)
+  * Tarski search form used for widgets (r505)
+  * Changes to Tarski are now tracked in the CHANGELOG file (r502)
+  * Search form JavaScript substantially improved (r495, r501)
+  * Mobile stylesheet replaced by unified base stylesheet (r494)
+  * Removed feed type selection in favour of `get_default_feed` (r492)
+  * Removed `Tarski` class (r491)
+  * Only update needed messages now appear on the Dashboard (r486)
+  * Tarski's various notices now added via the `admin_notices` hook (r486)
+  * Moved `head` theme data to `Asset` class (r475)
+  * Removed 'generator' `meta` element as WP now provides it (r474)
+  * Options page scripts now added via WP script loader (r460)
+  * Edit links have been removed from footer blurb (r447, r450)
+  * Navbar is now added via `th_header` hook (r435)
+  * Content of `code` elements now resizes in
+    <abbr title="Internet Explorer">IE</abbr> (r423)
+  * Default feed type now used in preference to choosing a feed type
+    (r420, r427)
+  * `get_author_feed_link` deprecated (r418)
+  * `get_category_feed_link` deprecated (r417)
+  * Removed Feedparser library (r416)
+  * Upgrade script moved to function `tarski_upgrade` (r415)
+
+#### Bug fixes
+
+  * Changed erroneous padding properties in the main stylesheet (r528)
+  * Navbar link text is now properly escaped (r520)
+
+### Version 2.0.5 [&sect;][37]
+
+   [37]: http://tarskitheme.com/2007/12/09/205-release/
+
+#### New features
+
+  * New footer theme hook, `th_fmain` (r413)
+  * Numeric version checking implemented (r405, r408)
+  * Development version notice now appears on Dashboard (r405)
+
+#### Tweaks
+
+  * Footer blurb and recent articles now added via `th_fmain` hook (r413)
+  * Helper files are now `require`d, not `include`d (r409)
+  * `flush_tarski_options` function can no longer delete (r408)
+  * `add_tarski_option` function deprecated (r408)
+  * `drop_tarski_option` function deprecated (r408)
+  * `Version` and `Options` classes now extend `Tarski` class (r405)
+  * Cache helper functions moved to admin helper file (r405)
+  * `tarski_option` function deprecated (r405)
+  * Excerpt filters now applied to `tarski_excerpt` (r396)
+  * `tarski_comment_author_link` uses `get_comment_author_link` filters (r394)
+  * Navbar order no longer needs to re-save on page changes (r390)
+
+#### Bug fixes
+
+  * Delete and restore options now works correctly (r408)
+  * Updating a particular option never uses the defaults (r408)
+  * Saving options overwrites deleted options correctly (r408)
+  * `$noSidebarInclude` now renders (r405)
+  * Sidebar constants no longer appear on archive templates (r405)
+  * Tarski now states languages correctly (r396)
+  * Blank blurb no longer generates surrounding markup (r392)
+  * Navbar now follows page order correctly (r390)
+
+### Version 2.0.4 [&sect;][38]
+
+   [38]: http://tarskitheme.com/2007/11/19/203-release/
+
+#### Tweaks
+
+  * Additional robustness added to navbar functions (r383, r384, r385)
+  * Navbar SQL code replaced with `get_posts` function call (r380, r383)
+  * Navbar spacing tweaked (r383)
+  * `tarski_get_pages` function deprecated (r380, r382)
+
+#### Bug fixes
+
+  * No navbar pages breaking post saving fixed (r381)
+
+### Version 2.0.3 [&sect;][39]
+
+   [39]: http://tarskitheme.com/2007/11/19/203-release/
+
+#### New features
+
+  * Update notifier support for `file_get_contents` added (r367)
+  * Added class `imagelink2` for borderless image links (r363, r364)
+
+#### Tweaks
+
+  * Greater robustness added to update functions (r374, r375)
+  * Home link `title` text tweaked (r373)
+  * Update notifier error message added (r372)
+  * Older and newer entries links now point in more intuitive directions (r371)
+  * Next and previous article links now wrapped in `span` elements (r368)
+  * Version check output now buffered (r369)
+  * Multiple authors check now only performed when admin page accessed (r365)
+
+#### Bug fixes
+
+  * Problematic update notification option import code removed (r370)
+  * Missing `libcurl` library no longer breaks the update notifier (r366)
+  * Categories stay hidden on theme upgrade (r359)
+
+### Version 2.0.2 [&sect;][40]
+
+   [40]: http://tarskitheme.com/2007/11/09/201-release/
+
+#### Bug fixes
+
+  * Update notifier now compatible with
+    <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> safe mode (r357)
+  * Update notification remains off when theme updated (r357)
+  * Fixed `type` attribute for feed links (r356)
+  * Constants file no longer breaks the navbar (r353, 355)
+  * `meta` element 'wp_theme' now closes properly (r352)
+
+### Version 2.0.1 [&sect;][41]
+
+   [41]: http://tarskitheme.com/2007/11/09/201-release/
+
+#### New features
+
+  * JavaScript output is now filtered (r346)
+  * Stylesheet output is now filtered (r343)
+
+#### Tweaks
+
+  * `meta` element 'wp_theme' added to `head` (r346)
+  * Tarski comment removed from footer (r346)
+  * Theme version appended to stylesheet links (r343, r346)
+  * Version is only checked when update notification is enabled (r341)
+  * `page_template_helper.php` removed (r337)
+  * `tarski_navbar` filter now returns an array (r336)
+  * <abbr title="Right to Left">RTL</abbr> rules moved to main stylesheet and
+    `rtl.css` removed (r336)
+
+#### Bug fixes
+
+  * Memory-hogging feed parsing removed (r345)
+  * Added robustness to the Options updater (r344)
+  * <abbr title="Cross-site scripting">XSS</abbr> vulnerability in `search.php`
+    fixed (r342)
+  * `gettext` omissions fixed (r342)
+  * Next/previous article navigation fixed in Internet Explorer (r340)
+  * Disappearing navbar bug fixed (r333)
+  * Update notifier displaying when Tarski up to date bug fixed (r333)
+
+### Version 2.0 [&sect;][42]
+
+   [42]: http://tarskitheme.com/2007/11/5/20-release/ (2.0 Release)
+
+#### New features
+
+  * Single posts and pages can now have a different widget sidebar (r311)
+  * Tag intersections and unions now generate accurate content (r305)
+  * Massively improved documentation in the [phpDoc][43] format (r275)
+  * Option to link to either RSS or Atom feeds (r255)
+  * Options can now be deleted and restored (r247)
+  * Option to reverse document `title` order (r246)
+  * Option to show tags everywhere, not just on single posts (r208)
+  * Archive and search feeds added to `head` (r195)
+  * Blogroll category can be added as external navbar links (r179, r180)
+  * [hCard][44] support added to posts and comments (r175)
+  * [hAtom][45] support added to posts (r173, r174)
+
+   [43]: http://www.phpdoc.org/
+   [44]: http://microformats.org/wiki/hcard
+   [45]: http://microformats.org/wiki/hatom
+
+#### Tweaks
+
+  * WordPress 2.1 and 2.2 support dropped (various)
+  * New screenshot (r326)
+  * Removed `body` classes `left` and `single` (r324)
+  * `tarski_doctitle` now returns an array to filter (r322)
+  * Footer widgets now display iff widgets have been added there (r316)
+  * Sidebar content moved to separate display files (r311)
+  * Improved error handling for missing custom sidebar file (r311)
+  * Header status check deprecated and replaced by pure
+    <abbr title="Cascading Stylesheets">CSS</abbr> rules (r304, r311)
+  * The external navbar links category will not be shown in the sidebar (r303)
+  * Added 'edit' link to footer blurb (r292)
+  * Filter added to `tarski_sidebar_links` (r291)
+  * Next and previous index page link function refactored (r284)
+  * Deprecated functions moved to `deprecated.php` (r278, r283)
+  * Next and previous post link styling tweaked (r282)
+  * Post page links tweaked to mirror tag styling (r282)
+  * Reduced duplication of feed link code (r280, r281)
+  * Search form now always wrapped in `tarski_searchform` function (r276)
+  * Stylesheet file names that are invalid
+    <abbr title="Cascading Stylesheets">CSS</abbr> identifiers excluded (r266)
+  * Stylesheet file names matching Tarski's `body` classes excluded
+    (r265, r266)
+  * Bottom margin of `primary` column reduced on index pages (r263)
+  * `gettext` with included code now uses `printf` for easier localisation
+    (r250)
+  * `tarski_doctitle`, `tarski_bodyclass` and `tarski_bodyid` filters added
+    (r246)
+  * `tarski_bodyclass` and `tarski_bodyid` functions no longer re-definable
+    (r246)
+  * <abbr title="WordPress Multi-User">WPMU</abbr> site admins now see update
+    notifications (r245)
+  * Default options updated (r210, r244)
+  * All actions and filters moved to `library/launcher.php` (r234)
+  * Nonce field added to Options page for increased security (r230)
+  * Removed 1.4 upgrade script (r227)
+  * `functions.php` massively cleaned up (r225)
+  * Options code moved to own class (r225)
+  * Moved upgrade code to helper file (r223)
+  * Moved display files to `library/display` (r220)
+  * Moved helper functions to `library/helpers` (r219)
+  * Tarski now respects <abbr title="WordPress">WP</abbr>'s robots option
+    (r217)
+  * `th_postend` now executes after asides as well as normal posts (r213)
+  * Hide categories option replaced with show categories option (r209)
+  * Feedparser library moved into `library/includes` (r206)
+  * JavaScript and stylesheets moved to their own directories (r202)
+  * Page navigation and tags now added via `th_postend` (r201)
+  * 'Required' notices added to comment form (r198)
+  * Feed links now added via `wp_head` action (r195) 
+  * Contextual notification about blank taglines added to Options page (r194)
+  * Comments and feed links code replaced with proper API functions (r193)
+  * Replaced deprecated `get_bloginfo` and `get_settings` calls (r177, r188)
+  * Footer blurb code executes even when there is no blurb (r172)
+  * Navbar and feed link now added via `th_navbar` action (r171)
+  * Loop file split into several more specialised files (r170)
+
+#### Bug fixes
+
+  * Custom styles no longer corrupt
+    <abbr title="Cascading Stylesheets">CSS</abbr> namespace (r265, r266)
+  * Special characters now escaped for blurb and sidebar text fields (r241)
+
+### Version 1.7.3
+
+#### Bug fixes
+
+  * Empty categories now display as intended on Options page (r300)
+  * Update notifier fix for servers where `allow_url_fopen` is disabled (r299)
+
+### Version 1.7.2 [&sect;][46]
+
+   [46]: http://tarskitheme.com/2007/09/16/17-release/ (1.7.2 Release)
+
+#### Bug fixes
+
+  * Blank category description overriding default text bug fixed (r200)
+  * Update notifier text on Options page added to `gettext` framework (r186)
+  * Nav output code spacing issue fixed (r185)
+
+### Version 1.7.1 [&sect;][47]
+
+   [47]: http://tarskitheme.com/2007/09/16/17-release/ (1.7.1 Release)
+
+#### Bug fixes
+
+  * References to <abbr title="WordPress">WP</abbr> 2.3-only function
+    `get_search_query` removed
+  * Asides category selection made compatible with
+    <abbr title="WordPress">WP</abbr> 2.3 database schema
+
+### Version 1.7 [&sect;][48]
+
+   [48]: http://tarskitheme.com/2007/09/16/17-release/ (1.7 Release)
+
+#### New features
+
+  * `id` attributes added to the document `body` (r137, r140, r141)
+  * Various classes added to post metadata to allow styling thereof (r136)
+  * Author descriptions now display on author archive pages (r133)
+  * Header image becomes home link when title is not displayed (r132)
+  * Category descriptions now displayed on category archive pages (r129)
+  * Version checking is now cached where possible (r121, r122, r123)
+  * Editable 'Home' link (r120)
+  * New tags template (r113, r114)
+  * Support for WordPress' new tagging functionality (r110, r114, r115)
+  * Navbar links automatically reorder when page order changes (r107)
+
+#### Tweaks
+
+  * Footer blurb output now filtered (r163)
+  * Theme hook `th_404` now filter `th_404_content` (r137, r155)
+  * Navbar output now filtered (r145, r151, r152)
+  * `$navbarInclude` ported to new hooks system (r145)
+  * Redundant hook `th_commentform` removed (r143)
+  * `tarski_bodyclass` and `tarski_bodyid` now conditionally defined (r138)
+  * Removed Live Comments Preview integration (r137)
+  * Links template brought up to date (r131)
+  * Removed Clean Archives integration (r124)
+  * Navigation Display options link display tweaked (r120)
+  * Removed Gravatar integration (r116)
+  * Removed Subscribe to Comments integration (r116)
+  * Removed Brian's Latest Comments integration (r116)
+  * Removed Ultimate Tag Warrior integration (r110, r111, r112, r114)
+  * `loop.php` moved back to main directory (r109)
+  * Update notification is now on by default (r108)
+
+#### Bug fixes
+
+  * Options page jQuery `noConflict()` issue resolved (r166)
+
+### Version 1.6.2 [&sect;][49]
+
+   [49]: http://tarskitheme.com/2007/08/17/16-release/ (1.6.2 Release)
+
+#### Bug fixes
+
+  * Default `404` content now appears when there is no constants.php file
+    (r144)
+  * Draft pages no longer appear in navigation display options (r144)
+  * Trailing slashes added to 'Home' links for fussy servers (r127)
+  * Theme version function bug (causing options to not be saved) fixed
+    (r98, r99)
+
+### Version 1.6.1 [&sect;][50]
+
+   [50]: http://tarskitheme.com/2007/08/17/16-release/ (1.6.1 Release)
+
+#### Bug fixes
+
+  * Incorrect function references on search pages fixed (r92)
+  * Search field output bug fixed (r92)
+  * Update notifier issue with some
+    <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> versions fixed (r88)
+
+### Version 1.6 [&sect;][51]
+
+   [51]: http://tarskitheme.com/2007/08/17/16-release/ (1.6 Release)
+
+#### New features
+
+  * New update notification system (r79, r82)
+  * [XOXO][52] added to navbar and other links lists (r80)
+  * [`rel="home"`][53] added to home links (r80)
+
+   [52]: http://microformats.org/wiki/xoxo
+   [53]: http://microformats.org/wiki/rel-home
+
+#### Tweaks
+
+  * Options page header selection code now degrades gracefully (r59, r78, r81)
+  * `constants-default.php` file removed (r78)
+  * Options page code switched to [jQuery][54] (r60, r74)
+  * `comments.php` file refactored (r62)
+  * Courier New replaced by Courier for `code` and `pre` element display
+    (r54, r55)
+
+   [54]: http://jquery.com/
+
+#### Bug fixes
+
+  * Potential <abbr title="Cross-site scripting">XSS</abbr> vulnerability
+    closed (r73)
+  * Footer floats now clear properly (r63, r65, r66)
+  * Search results `title` added to `gettext` (r64)
+  * Comment author form field bug fixed (r58)
+  * Comments work properly when Recent Articles widget in use (r56, r57)
+
+### Version 1.5 [&sect;][55]
+
+   [55]: http://tarskitheme.com/2007/07/14/15-release/ (1.5 Release)
+
+#### New features
+
+  * New theme hooks system (r34, r40)
+  * Handheld stylesheet for mobile devices added (r33)
+  * [OpenID comments][56] support (r36)
+  * Improved support for static front pages (r25)
+  * Default search text hidden by JS when search field selected (r27)
+  * Tarski options page is now displayed in
+    <abbr title="Right to Left">RTL</abbr> format when appropriate (r32)
+
+   [56]: http://verselogic.net/projects/wordpress/wordpress-openid-plugin/
+
+#### Tweaks
+
+  * Navbar tweaked to work with static front page (r25)
+  * Site title tweaked to work with static front page (r25)
+  * `searchform.php` moved out of `library/` into root (r20)
+  * 'Site Admin' link in navbar `id` of `nav-admin` added (r16)
+  * `functions.php` cleaned up (r34)
+  * `code` element display in Safari improved (r39)
+  * Header detection code tightened up (r40)
+  * Most constants variables calls replaced with hook function calls (r34, r40)
+
+#### Bug fixes
+
+  * Tarski options page link in Dashboard now refers correctly (r30)
+  * "Older entries" link now only appears when there really are older entries
+    (r29)
+  * Trackback link text unobscured when columns swapped (r22)
+  * Pagination links text made translatable (r18)
+  * Various `gettext` omissions corrected (r17, r19)
+  * `imagecenter` image class <abbr title="Cascading Stylesheets">CSS</abbr>
+    fix (r23)
+  * Potential <abbr title="Cross-site scripting">XSS</abbr> issue in
+    `searchform.php` fixed (r23)
+  * Footer widgets now correctly obey sidebar options (r37)
+  * Tarski options page now correctly links to core widget controls (r38)
+
+### Version 1.4 [&sect;][57]
+
+   [57]: http://tarskitheme.com/2007/04/14/14-release/ (1.4 Release)
+
+#### New features
+
+  * Display of recent articles in footer now optional
+  * The [Custom Header API][58] is now supported: WordPress will now let you
+    upload and crop your own images in addition to uploading manually and the
+    stock headers
+  * Theme is now [WordPress MU][59] compatible out-of-the-box
+
+   [58]: http://boren.nu/archives/2007/01/07/custom-image-header-api/
+   [59]: http://mu.wordpress.org/
+
+#### Tweaks
+
+  * The various Tarski options have been collected into one option,
+    `tarski_options`, to make things neater. As a result, this version will
+    require an update of all `.php` files in your Tarski install to work
+    properly
+  * Automatic 'About' title removed from footer blurb
+  * Footer blurb moved above recent articles listing
+  * Footer options copy tweaked
+  * Comment markup tweaked
+  * New installations now default to having the theme be centred in the browser
+    window
+  * Certain configuration options are now hidden from
+    <abbr title="WordPress Multi-User">WPMU</abbr> end-users, such as upgrade
+    notification and upload locations for styles, images, and custom sidebars
+  * Footer displays hosting site link alongside the Tarski and WordPress credit
+    links for <abbr title="WordPress Multi-User">WPMU</abbr> users
+
+#### Bug fixes
+
+  * Various swapped columns styling issues fixed
+  * Missing `tarski` attribute added to Options page `_e` function
+
+### Version 1.3 [&sect;][60]
+
+   [60]: http://tarskitheme.com/2007/04/02/13-release/ (1.3 Release)
+
+#### New features
+
+  * Third sidebar option: a custom sidebar file so users can write their own
+    <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and
+    <abbr title="Hypertext Markup Language">HTML</abbr>
+
+#### Tweaks
+
+  * Legacy <abbr title="WordPress">WP</abbr> 2.0.x branch-compatible code
+    removed
+  * Tarski now employs WordPress' included JavaScript libraries
+  * Additional scripts and styles now only injected on the Tarski options page
+  * Current page highlighting markup tweaked
+  * Page `id`s added to navbar
+  * `functions.php` cleaned up and functions commenting improved
+  * `tarski_title` function tweaked
+  * Options page help text and captions revised
+  * Options page layout adjusted
+  * Options page markup and styling adjusted
+  * Options page sidebar selection clarified
+  * Sidebar can be hidden on non-index pages regardless of sidebar type
+  * Edit page link moved below page title
+
+### Version 1.2.5 [&sect;][61]
+
+   [61]: http://tarskitheme.com/2007/04/02/13-release/ (1.2.5 Release)
+
+#### Tweaks
+
+  * Translations added back in
+
+#### Bug fixes
+
+  * Recent articles issue with `some` tag fixed
+
+### Version 1.2.4 [&sect;][62]
+
+   [62]: http://tarskitheme.com/2007/03/27/124-release/ (1.2.4 Release)
+
+#### New features
+
+  * New header image, <cite>Orbits</cite>
+  * Stylesheet for <abbr title="Right to Left">RTL</abbr> languages
+
+#### Tweaks
+
+  * Some improvements to the print stylesheet
+  * Options page is now accessed via a cleaner URL
+  * Feed icons replaced with new ones closer to the [agreed standard][63]
+  * 'Site Admin' link in the top navigation no longer allows registration
+  * Translations removed from the download
+  * Page creation options removed
+  * `html` element now states the language set in the `wp-config.php` file
+  * No image now displays when the 'Blank Header' option is set
+  * Header image code cleaned up and moved to `functions.php`
+  * `print.css`, `loop.php` and `searchform.php` moved into `/library/`
+  * `links.php` template header tweaked
+
+   [63]: http://feedicons.com/
+
+### Version 1.2.3 [&sect;][64]
+
+   [64]: http://tarskitheme.com/2007/02/21/123-release/ (1.2.3 Release)
+
+#### New features
+
+  * French translation by Matthieu Mauduit
+  * Danish translation by Henrik Buchwald
+
+#### Tweaks
+
+  * Removed the redundant `readme.txt` file
+
+#### Bug fixes
+
+  * Page creation database queries made compatible with
+    <abbr title="WordPress">WP</abbr> 2.1
+  * Comments number and edit links added to `gettext` framework
+  * `include` paths changed to work round a problem on some servers
+  * `blockquote`, `ol` and `ul` margins changed to solve
+    <abbr title="Internet Explorer">IE</abbr> list display issue
+
+### Version 1.2.2 [&sect;][65]
+
+   [65]: http://tarskitheme.com/2007/01/26/122-release/ (1.2.2 Release)
+
+#### New features
+
+  * 404 error messages can be set via the `$errorPageInclude` theme hook
+  * New theme hook `$postEndInclude` added
+  * New theme hook `$pageEndInclude` added
+
+#### Tweaks
+
+  * Dutch translation updated
+  * Swedish translation updated
+  * German translation updated
+  * Links listing made compatible with <abbr title="WordPress">WP</abbr> 2.1
+  * Top navigation made compatible with <abbr title="WordPress">WP</abbr> 2.1
+  * Top navigation turned into a function and placed in `functions.php`
+  * Date formatting turned into a function and placed in `functions.php`
+  * Body class generation turned into a function and placed in `functions.php`
+  * Instances of `$table_prefix` replaced with `wpdb-&gt;$prefix`
+  * `h2` link display adjusted
+  * `pre` element display improved
+  * Tarski now uses the `prototype.js` and `scriptaculous.js` files bundled
+    with <abbr title="WordPress">WP</abbr> 2.1 when available
+
+#### Bug fixes
+
+  * Erroneous `query_posts` argument `cat=-3` removed from pagination query
+  * Functions page text conversion to `gettext` framework completed
+  * `loop.php` now `@include`s the constants file so `$frontPageInclude`
+    displays
+  * Link category titles only display when that category contains visible links
+  * Sidebar conditionals in `tags.php` and `links.php` removed
+
+### Version 1.2.1 [&sect;][66]
+
+   [66]: http://tarskitheme.com/2006/12/17/121-release/ (1.2.1 Release)
+
+#### New Features
+
+  * Dutch translation by Gerard Konning
+  * Swedish translation by Mikael Jorhult
+  * German translation by Andreas Beer
+  * If the current page is in the navbar, it's denoted by an `id`,
+    `nav-current`
+  * The current page is highlighted by the included stylesheets
+  * Added new theme hook, `$frontPageInclude`
+  * A link to our [Styling Content][67] help page now appears on the
+    'Write Post' page in the admin panel
+
+   [67]: http://tarskitheme.com/help/styling/
+
+#### Tweaks
+
+  * Trackback info only displays if trackbacks are being accepted
+  * Next/previous article wrapper only displays if other entries exist
+  * Options page text is now outputted by `_e()` function
+  * Excerpts in 'Recent Entries' are shorter and filtered
+
+#### Bug fixes
+
+  * Fixed bug where post dates did not display under some circumstances
+  * Floated elements no longer overrun the entries underneath
+
+### Version 1.2 [&sect;][68]
+
+   [68]: http://tarskitheme.com/2006/12/06/12-release/ (1.2 Release)
+
+#### New Features
+
+  * New theme hook, `$noSidebarInclude`, for displaying alternate content in
+    the non-home pages when you've selected to keep sidebars off there
+  * New theme hook, `$navbarInclude`, for additional links in the top
+    navigation
+  * Trackback RDF added to posts and pages for easier trackback discovery
+  * Trackback URL added to pages with open comments
+  * Added `$comment_count` to make it easier for people editing the theme to
+    add numeric values to each comment
+  * `insert`, `insertleft` and `insertright` classes added to allow for easy
+    insertion of menus etc. into pages and entries
+  * `imagecentre` and `imagecenter` classes added to let you centre images
+    easily, whichever variation of English you use
+  * `abbr`, `pre`, `sub`, `sup`, `hr`, `h5` and `h6` are now styled
+  * Entry pages now have next/previous article navigation
+  * Multiple-page entries and pages are now supported
+  * Added option to paginate index pages (home page, search results, category
+    and date archives)
+  * Display of blog title is now optional like the subtitle
+
+#### Tweaks
+
+  * Links now point to [tarskitheme.com][69]
+  * Text is now outputted by the `_e` function to allow for localisation
+  * Sidebar links categories are now sorted by `cat_name` rather than `cat_id`
+  * Date formatting is now set by users' preference rather than overriding it
+  * Author names are now set by users' preference rather than overriding it
+  * Comment moderation display improved
+  * Comment feed links now work correctly for sites not using `.htaccess`
+    permalinks
+  * Search results moved into `loop.php`
+  * `loop.php` file cleaned up
+  * Comment links for normal entries only display if comments are open or the
+    post has comments
+  * Comment links for asides display as 'Permalink' if comments are closed and
+    the entry has no comments
+  * Major rewrite of Tarski's <abbr title="Cascading Stylesheets">CSS</abbr>
+  * Next/previous post and page navigation should now only display page nav if
+    there is more than one post or page
+
+   [69]: http://tarskitheme.com/
+
+#### Bug fixes
+
+  * Floated elements no longer overrun Asides' meta section or an entry's tags
+  * Additional `li` element doesn't appear in the nav bar when a visitor is
+    not logged in
+
+### Version 1.1.3 [&sect;][70]
+
+   [70]: http://tarskitheme.com/2006/05/23/113-release/ (1.1.3 Release)
+
+#### New Features
+
+  * New header image, <cite>Spots</cite>
+  * Added option to display site tagline below title
+
+#### Tweaks
+
+  * Asides display revised
+  * Footer content is now columnated
+  * Widget styling now more closely resembles the normal Tarski sidebar
+  * Middle dot in title no longer shows up when the site has no tagline
+  * Gravatars have returned to their previous borderless state
+  * `.png` icons replaced with `.gif` ones which will look better on sites
+    which change the background colour, and in Internet Explorer 6 and below
+
+### Version 1.1.2 [&sect;][71]
+
+   [71]: http://tarskitheme.com/2006/05/18/112-release/ (1.1.2 Release)
+
+#### Plugin support
+
+  * [WordPress Widget][72] support, including an improved links widget
+
+   [72]: http://ionfish.co.uk/tarski/widgets/
+
+#### New features
+
+  * New links page template for those with longer blogrolls
+  * `imagelink`, `imageleft`, `imageright` and `imageblock`
+    <abbr title="Cascading Stylesheets">CSS</abbr> classes added
+  * Comments can now be enabled for pages, not just posts
+  * Print stylesheet added
+
+#### Tweaks
+
+  * Image link styling adjusted
+  * `style.css` now encourages one not to edit it directly
+
+#### Bug Fixes
+
+  * Archives and `404` page titles now switch sides to correspond with the
+    column display order
+  * Options page will no longer display an error when there are no pages in the
+    WordPress install
+
+### Version 1.1.1 [&sect;][73]
+
+   [73]: http://tarskitheme.com/2006/03/26/111-release/ (1.1.1 Release)
+
+#### New features
+
+  * Navigation links are now selected from the list of top-level pages
+  * New variant style, 'Skyline'
+  * New header by Martin Koza, <cite>Thoughtwind</cite>
+  * Column swap option added
+  * Comment editing links added
+
+#### Plugin Support
+
+  * UTW live tag search added to tags page; requires UTW 3.1 and can be
+    activated in the Tarski options panel
+
+#### Tweaks
+
+  * Revised float clearing method so the layout works in
+    <abbr title="Internet Explorer 7">IE7</abbr> Beta 2
+  * Blog title `line-height` increased
+  * Entry header `line-height`s increased and padding tweaked so as to make
+    post titles that are more than one line less clunky
+  * 'Asides' comment number link changed from `comments_link` to
+    `the_permalink`
+  * Convoluted `ABSPATH . '/wp-content/themes/' . get_template()` replaced by
+    the cleaner `TEMPLATEPATH`
+  * Stray clearer `div` removed from `footer.php`
+  * Loop for pages moved into `loop.php`
+  * `h2` elements for single entry pages changed to `h1`s
+  * Post and page edit function formatting revised
+  * Placement of the comments form include from `constants.php` adjusted
+    slightly
+  * Link border removed from `h3` and `h4` elements within the post content
+    `div`
+  * Comments title and feed link margins and padding adjusted
+  * Site and comments feed links should now use the correct permalinks intead
+    of hard coded ones
+  * "Tarski options have been updated" notice now fades like other
+    <abbr title="WordPress">WP</abbr> admin notices
+  * Custom sidebar content is now styled like posts (link underlining,
+    increased line-height for paragraphs)
+
+### Version 1.1 [&sect;][74]
+
+   [74]: http://tarskitheme.com/2006/03/20/11-release/ (1.1 Release)
+
+#### Bug Fixes
+
+  * Theme info vanishing in <abbr title="Internet Explorer">IE</abbr> fixed
+  * Fixed <abbr title="Internet Explorer">IE</abbr>
+    <abbr title="Cascading Stylesheets">CSS</abbr> bug (list bullets showing up
+    when they weren't meant to)
+  * Incorrectly referring `.blurb` code was changed to refer instead to
+    `#blurb`
+  * Fixed missing closing `div` tag in `comments.php`
+  * Fixed tiny bug for non-logged-in users when 'Subscribe To Comments' is not
+    installed
+  * Fixed issue with pingbacks versus trackbacks
+
+#### Tweaks
+
+  * Pingback URL added to `head`
+  * Added `wp_head()`, `wp_footer()` and `wp_meta()` plugin hooks
+  * Incorporated the code in `single.php` into `index.php`
+  * Added borders to header thumbnails
+  * Tweaked header selection colour
+  * Moved positioning <abbr title="Cascading Stylesheets">CSS</abbr> to
+    `style.css`
+  * Tarski updates now display in the WordPress dashboard as well as in the
+    theme options page
+  * `line-height` for the tag cloud tweaked a little
+
+#### Plugin Support
+
+  * Live Comment Preview ([version 1.7][75])
+  * Asides: our own implementation, comes built into Tarski 1.1. Just pick a
+    category to display as asides in the Tarski options pane
+
+   [75]: http://dev.wp-plugins.org/wiki/LiveCommentPreview
+
+#### New Features
+
+  * Style switcher allows additional `.css` files to be uploaded to
+    `wp-content/themes/tarski/styles/` and selected via the Tarski options pane
+  * Added 'Classic' and 'Polar' styles
+  * New header image, <cite>Coffee Rings</cite>
+  * Blank header option
+  * Added `constants.php` file to allow for persistent includes across Tarski
+    upgrades. See [the documentation][76] for more info
+  * Added option to only display sidebar on the front page
+
+   [76]: http://tarskitheme.com/help/theme-hooks/
+
+### Version 1.0.1 [&sect;][77]
+
+   [77]: http://tarskitheme.com/2006/03/02/101-release/ (1.0.1 Release)
+
+#### Bug Fixes
+
+  * Default header image will now be displayed if `tarski_header` hasn't been
+    set via the options pane
+  * Archives pages now displays correctly for installations without Ultimate
+    Tag Warrior
+  * Fixed <abbr title="Internet Explorer">IE</abbr>
+    <abbr title="Portable Network Graphics">PNG</abbr> issues
+  * Removed extraneous markup
+
+#### Plugin Support
+
+  * Skippy's Gravatars ([version 2.6][78])
+  * Subscribe to Comments ([version 2.0.2][79])
+  * Brian's Latest Comments ([version 1.5.9][80])
+
+   [78]: http://www.skippy.net/blog/2005/03/24/gravatars/
+   [79]: http://txfx.net/code/wordpress/subscribe-to-comments/
+   [80]: http://meidell.dk/archives/category/wordpress/latest-comments/
+
+#### New Features
+
+  * Option to centre the theme in the browser window
+
+### Version 1.0 [&sect;][81]
+
+   [81]: http://tarskitheme.com/2006/02/27/welcome-to-tarski/ (Welcome to Tarski)
+
+Initial release
